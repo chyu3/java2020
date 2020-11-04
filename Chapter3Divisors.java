@@ -20,10 +20,12 @@ public class Chapter3Divisors
 
 /*
 
-Enter a number: 7
-7 is divisible by 7
-
-Enter a number: 9
-9 is divisible by 3
+Enter a number: 12
+1
+2
+3
+4
+6
+12
 
 */
