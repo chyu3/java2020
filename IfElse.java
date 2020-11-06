@@ -18,6 +18,13 @@ public class IfElse
 		
 		IBIO.output("Minimum  = " + min );
 		
+		if(c > 0)
+			IBIO.output(c + " is positive");
+		else if( c < 0 )
+			IBIO.output(c + " is negative");
+		else
+			IBIO.output(c + " is zero");
+		
 			
 	}
 }

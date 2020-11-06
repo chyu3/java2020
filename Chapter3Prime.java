@@ -12,7 +12,8 @@ public class Chapter3Prime
 			divisor++;
 		} while( number % divisor != 0 );
 		System.out.println( number + " is divisible by " + divisor );
-		
+		if(number == divisor)
+			System.out.println( number + " is a prime." );
 	}
 }
 
