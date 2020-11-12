@@ -1,7 +1,13 @@
+/* NOTE
+ * We are using StdDraw library from
+ * https://introcs.cs.princeton.edu/java/stdlib/
+ * to draw geometric figures and pause the execution of our program
+ */
+ 
 import java.util.Scanner;
 import static java.lang.System.out;
 
-public class RecCircleTest
+public class RecCircle
 {
 	static final double scaleX = 100;
 	static final double scaleY = 100;
@@ -21,20 +27,18 @@ public class RecCircleTest
 	 * concentric circles using recursion and StdDraw.circle(x,y,r);
 	 * the circles shoud be drawn from largest to smallest radius
 	 */
-	public static void circlere(double radius)	// expanding circle [3 marks]
+	public static void circlere(double radius) // expanding circle
 	{
-		// YOUR MASTERPIECE CODE GOES HERE!
-		
+		// your code here
 	}
 
 	/* Part 2: finish this recursive method that will draw
 	 * concentric circles using recursion and StdDraw.circle(x,y,r);
 	 * the circles shoud be drawn from smallest to largest radius
 	 */
-	public static void circlers(double minRadius, double maxRadius)	// shrinking circle [3 marks]
+	public static void circlers(double radius)	// shrinking circle
 	{
-		// YOUR MASTERPIECE CODE GOES HERE!
-		
+		// your code here
 	}
 
 	public static void main(String[] args)
@@ -44,26 +48,28 @@ public class RecCircleTest
 		double maxRadius = 0;
 		
 		if( scaleX == scaleY )
-		{	maxRadius = scaleX;
-		}
+			maxRadius = scaleX;
 		else if( scaleX > scaleY )
-		{	maxRadius = scaleX / 2;
-		}
+			maxRadius = scaleX / 2;
 		else
-		{	maxRadius = scaleY / 2;
-		}	
+			maxRadius = scaleY / 2;
+		/*	
 		out.print("Enter a radius (1-" + maxRadius + "): ");
 		Scanner in = new Scanner(System.in);
 		double r = in.nextDouble();
 		in.close();
-
+		*/
 		// Expanding/growing concentric circles (comment/uncomment to test)
 		StdDraw.setPenColor(StdDraw.BLUE);
-		circlere( r );
+		circlere( 25 );
 
+		StdDraw.pause(3000);
+		StdDraw.clear();
+		StdDraw.pause(1000);
+		
 		// Shrinking concentric circles (comment/uncomment to test)
-		//StdDraw.setPenColor(StdDraw.MAGENTA);
-		//circlers( 1, r );
+		StdDraw.setPenColor(StdDraw.MAGENTA);
+		circlers( 25 );
 
 	}
 	

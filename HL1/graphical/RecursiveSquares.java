@@ -8,10 +8,10 @@
  *********************************************************/
  
  /* NOTE
- * We are using StdDraw library from
- * https://introcs.cs.princeton.edu/java/stdlib/
- * to draw geometric figures and pause the execution of our program
- */
+  * We are using StdDraw library from
+  * https://introcs.cs.princeton.edu/java/stdlib/
+  * to draw geometric figures and pause the execution of our program
+  */
 
 public class RecursiveSquares
 {
@@ -50,7 +50,7 @@ public class RecursiveSquares
 
 
     // plot an order N recursive squares pattern
-    public static void main(String[] args) throws InterruptedException
+    public static void main(String[] args)
     {	// bypass the command line and use 4 for N
         //int N = Integer.parseInt(args[0]);
         int N = 4;
