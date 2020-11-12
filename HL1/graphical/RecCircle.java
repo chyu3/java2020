@@ -43,12 +43,7 @@ public class RecCircle
 	 */
 	public static void circlers(double radius)	// shrinking circle
 	{
-		StdDraw.circle(middleX, middleY, radius);
-		StdDraw.pause(500);		// to slow down the drawing of circles
-		if ( radius < 1 )
-			return;
-		else
-			circlers( radius-1 );
+		// your code here
 	}
 
 	public static void main(String[] args)
