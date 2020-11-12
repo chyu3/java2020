@@ -8,12 +8,13 @@ public class ValidationWhile
 		int a = IBIO.inputInt("Enter a number: ");
 		while(a < 5)
 		{
+			// this line runs only if a IS < 5
 			a = IBIO.inputInt("ERROR-enter a number < 5: ");
 		}
 		
 		int b = 0;
 		do
-		{
+		{	// this code runs AT LEAST ONCE
 			b = IBIO.inputInt("Enter a number: ");
 			if(b < 5)
 				IBIO.output("ERROR-enter a number < 5");
