@@ -6,10 +6,16 @@
  *  Plot an order 4 tree of overlapping gray squares.
  *  by Robert Sedgewick and Kevin Wayne, modified by mdv.
  *********************************************************/
+ 
+ /* NOTE
+ * We are using StdDraw library from
+ * https://introcs.cs.princeton.edu/java/stdlib/
+ * to draw geometric figures and pause the execution of our program
+ */
 
 public class RecursiveSquares
 {
-
+	static double ratio = 2.4;
     // plot a square, centered on (x, y) of the given side length
     // with a grey background and black border
     public static void drawSquare(double x, double y, double size)
@@ -22,15 +28,14 @@ public class RecursiveSquares
 
     // plot an order n recursive squares pattern
     // centered on (x, y) of the given side length
-    public static void draw(int n, double x, double y, double size) throws InterruptedException
+    public static void draw(int n, double x, double y, double size)
     {
-        if (n == 0)
+        if (n <= 0)
         {
 			return;
 		}
 		
-		Thread.sleep(500);
-        double ratio = 2.4;
+		StdDraw.pause(500);
         
         drawSquare(x, y, size);
 
@@ -56,5 +61,12 @@ public class RecursiveSquares
     }
 
 }
+
+/*
+ * challenges: (save new versions of this class for each challenge)
+ * Modify the code in the recursive method (draw) so that:
+ * 1-the squares are drawn in reverse order (from smaller to larger ones)
+ * 
+ */
 
 
