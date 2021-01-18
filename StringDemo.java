@@ -20,7 +20,7 @@ public class StringDemo
 		String s2 = "Joe";
 		System.out.println(s1 + " " + s2);
 		System.out.println(s1.hashCode()  + " " + s2.hashCode() );
-		s1 = "JJ";
+		s1 = "joe";
 		System.out.println(s1 + " " + s2);
 		System.out.println(s1.hashCode()  + " " + s2.hashCode() );
 	}
