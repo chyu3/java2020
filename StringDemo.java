@@ -10,6 +10,8 @@ public class StringDemo
 		String name = surName.trim() + " " + givenName.trim();
 		System.out.println("Hello " + name + ", how are you?");
 		*/
+		double z = 1/3.0;
+		System.out.println(z);
 		int x = 5;
 		int y = x;
 		System.out.println(x + " " + y);
