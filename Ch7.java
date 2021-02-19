@@ -2,21 +2,24 @@
 public class Ch7
 {
 	
-public static void main(String[] args)
-{
-	for ( int i = 1 ; i < 20; i++)
+	public static void main(String[] args)
 	{
-		String s = pad(i, 10) + pad(i*i, 10) + pad(i*i*i, 10);
-		IBIO.output( s );
+		int w = 5;
+		for ( int i = 1 ; i < 20; i++)
+		{
+			String s = pad(i, w) + pad(i*i, w) + pad(i*i*i, w);
+			IBIO.output( s );
+		}
 	}
-}
 
-	static String pad(int n, int tab)
+	// pad aligns N to the right with a given width
+	static String pad(int number, int width)
 	{
-		String st = "" + n;
-		while ( st .length() < tab )
-			st = " " + st;
-		return st;
+		String aligned = "" + number;
+		while ( aligned.length() < width )
+		{	aligned = " " + aligned;
+		}
+		return aligned;
 	}
 }
 
