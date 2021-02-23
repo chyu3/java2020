@@ -8,7 +8,7 @@ public class Pr72
 		// use the indexOf method in this method (align)
 		// as suggested in the worksheets
 		String aligned = "" + number;
-		while ( aligned.length() < width )
+		while ( aligned.indexOf('.') < width )
 		{	aligned = " " + aligned;
 		}
 		return aligned;
@@ -27,8 +27,8 @@ public class Pr72
 		double xx = 1;	// used to calculate output values
 		for ( int i = 0 ; i < 10; i++)
 		{
-			//xx = truncate(xx * 3.732);
-			xx = xx * 3.732;
+			xx = truncate(xx * 3.732);
+			//xx = xx * 3.732;
 			String s = align(xx, w);
 			IBIO.output( s );
 		}
