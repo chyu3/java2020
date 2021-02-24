@@ -1,15 +1,15 @@
 
 public class Node
 {
-	int data;
+	int  data;
 	Node next; // (self-reference)
-	
-	public Node(int d)
-	{
-		data = d;
+/*	
+	public Node(int d)	// constructor <- allows you to create
+	{					// a node and initialise its data at
+		data = d;		// the same time.
 		next = null;
 	}
-	
+*/	
 	public boolean hasNext()
 	{
 		if(next == null)
@@ -19,6 +19,13 @@ public class Node
 			
 		// OR // return next != null;
 	}
+
+/*
+	public String toString()
+	{
+		return "" + data;
+	}
+*/
 
 }
 

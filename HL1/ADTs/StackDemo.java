@@ -2,25 +2,23 @@
  * StackDemo v1
  * 
  */
-import java.util.*;
+
 
 public class StackDemo
 {
 	
 	public static void main (String[] args)
 	{
-		Stack<String> stack = new Stack<>();
-		String input;
+		Stack stack = new Stack();
+		int input;
 		do
 		{
-			input = IBIO.input("Enter a name to push to the stack: ");
-			if(input.length() > 0)
+			input = IBIO.inputInt("Enter a number to push to the stack: ");
+			if(input > 0)
 			{	stack.push(input);
 			}
-			System.out.println(stack);
-		} while(input.length() > 0);
-		
-		
+			stack.printStack();
+		} while(input > 0);
 	}
 }
 
