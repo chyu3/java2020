@@ -1,4 +1,8 @@
-
+/*
+ * Stack ADT - Linked implementation
+ *
+ */
+ 
 public class Stack
 {
 	Node top;
@@ -25,10 +29,26 @@ public class Stack
 		}
 	}
 	
+	public int pop()
+	{
+		int d = top.data;
+		top = top.next;
+		return d;
+	}
+	
+	public int peek()
+	{
+		return top.data;
+	}
+	
 	public void printStack()
 	{
 		String s = "";
 		Node temp = top;
+		if(temp != null)
+		{
+			System.out.println("Top\n---");
+		}
 		while(temp != null)
 		{
 			System.out.println(temp.data);

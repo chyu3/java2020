@@ -1,4 +1,8 @@
-
+/*
+ * Node (element) class: building block of ADTs,
+ * specifically for linked (list) implementations
+ */
+ 
 public class Node
 {
 	int  data;
