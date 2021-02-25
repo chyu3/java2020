@@ -9,8 +9,8 @@ public class Node
 	Node next; // (self-reference)
 /*	
 	public Node(int d)	// constructor <- allows you to create
-	{					// a node and initialise its data at
-		data = d;		// the same time.
+	{					// a node AND initialise its data at
+		data = d;		// the same time (with one line of code).
 		next = null;
 	}
 */	
