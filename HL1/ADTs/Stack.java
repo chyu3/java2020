@@ -31,9 +31,13 @@ public class Stack
 	
 	public int pop()
 	{
-		int d = top.data;
-		top = top.next;
-		return d;
+		if( !isEmpty() )
+		{
+			int d = top.data;
+			top = top.next;
+			return d;
+		}
+		return -1;
 	}
 	
 	public int peek()
@@ -43,7 +47,6 @@ public class Stack
 	
 	public void printStack()
 	{
-		String s = "";
 		Node temp = top;
 		if(temp != null)
 		{
