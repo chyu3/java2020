@@ -11,7 +11,7 @@ public class Node
 	public Node(int d)	// constructor <- allows you to create
 	{					// a node AND initialise its data at
 		data = d;		// the same time (with one line of code).
-		next = null;
+		next = null;	// like: Node n = new Node(5);
 	}
 */	
 	public boolean hasNext()

@@ -19,6 +19,11 @@ public class StackDemo
 			}
 			stack.printStack();
 		} while(input > 0);
+		
+		System.out.println("\nNow we pop the whole stack:");
+		while(stack.isEmpty() == false)
+		{	System.out.print( stack.pop() + " " );
+		}
 	}
 }
 
