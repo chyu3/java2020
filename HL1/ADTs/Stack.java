@@ -36,8 +36,10 @@ public class Stack
 			int d = top.data;
 			top = top.next;
 			return d;
+		} else {
+			System.out.println("Stack empty!");
+			return -1;
 		}
-		return -1;
 	}
 	
 	public int peek()

@@ -23,7 +23,9 @@ public class StackDemo
 		System.out.println("\nNow we pop the whole stack:");
 		while(stack.isEmpty() == false)
 		{	System.out.print( stack.pop() + " " );
+			//stack.printStack();
 		}
+		System.out.print( stack.pop() + " " ); // to cause error, stack empty
 	}
 }
 

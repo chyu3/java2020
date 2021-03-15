@@ -50,7 +50,8 @@ public class Int2Bin
 		int2binHL(x);
 		System.out.println( " in binary (HL algorithm)");
 		Stack binary = int2binStack(x);
-		// now output the stack so that we get 
+		// now output the stack so that we get the binary
+		// equivalent of the integer input
 		/* HL challenge:
 		 * write a method, called int2binS, that uses a stack
 		 * in order to calculate the binary equivalent of an
