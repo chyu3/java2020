@@ -11,10 +11,10 @@ public class AC1
 		System.out.println();
 	}
 	
-	public int[] copy(int[] array)
+	public static int[] copy(int[] array)
 	{
-		int[] clone = int[array.length];
-		for(int i = 0; i < array.length) //  traverse/iterate array
+		int[] clone = new int[array.length];
+		for(int i = 0; i < array.length; i++) //  traverse/iterate array
 		{
 			clone[i] = array[i];
 		}
@@ -27,6 +27,10 @@ public class AC1
 	{
 		int[] a = { 9,8,7,6,5,4,3,2,1 }; // = new int[SIZE];
 		printArray(a);
+		int[] b = copy(a);
+		printArray(b);
+		System.out.println(a);
+		System.out.println(b);
 	}
 	
 }
