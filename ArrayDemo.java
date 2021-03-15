@@ -21,21 +21,22 @@ public class ArrayDemo
 	
 	public static void main (String[] args)
 	{
-		int[] array = { 1,3,5,7,9,11 };
-		int[] b = array; //{ 1,2,3,4,5,6,7 };
-		int[] c = new int[array.length];
-		System.out.println(array);
+		int[] a = { 1,3,5,7,9,11 };
+		int[] b = a; //{ 1,2,3,4,5,6,7 };
+		int[] c = new int[a.length];
+		System.out.println(a);
 		System.out.println(b);
-		printArray(array);
-		System.out.println(array[0]); // first element
-		int lastIndex = array.length-1;
-		System.out.println(array[lastIndex]); // last element
-		printArrayReverse( array );
+		printArray(a);
+		System.out.println(a[0]); // first element
+		int lastIndex = a.length-1;
+		System.out.println(a[lastIndex]); // last element
+		printArrayReverse( a );
 		b[b.length-1] = 13;
 		System.out.println("\nArray b's last element set to 13");
 		System.out.println("\nPrinting arrays array and b");
-		printArray( array );
+		printArray( a );
 		printArray( b );
+		printArray( c );
 		
 	}
 }
