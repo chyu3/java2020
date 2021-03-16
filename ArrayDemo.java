@@ -33,7 +33,7 @@ public class ArrayDemo
 		printArrayReverse( a );
 		b[b.length-1] = 13;
 		System.out.println("\nArray b's last element set to 13");
-		System.out.println("\nPrinting arrays array and b");
+		System.out.println("\nPrinting arrays a and b");
 		printArray( a );
 		printArray( b );
 		printArray( c );
