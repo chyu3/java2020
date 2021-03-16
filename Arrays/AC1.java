@@ -11,6 +11,16 @@ public class AC1
 		System.out.println();
 	}
 	
+	public static int[] extremes(int[] array)
+	{
+		if(array.length == 0)
+			return null;
+		int[] ext = new int[2];
+		ext[0] = array[0];
+		ext[1] = array[array.length-1];
+		return ext;
+	}
+	
 	public static int[] copy(int[] array)
 	{
 		int[] clone = new int[array.length];
@@ -31,6 +41,10 @@ public class AC1
 		printArray(b);
 		System.out.println(a);
 		System.out.println(b);
+		b[b.length-1] = 10;
+		printArray(a);
+		printArray(b);
+		printArray( extremes(a) );
 	}
 	
 }
