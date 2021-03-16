@@ -35,7 +35,7 @@ public class AC1
 	
 	public static void main (String[] args)
 	{
-		int[] a = { 9,8,7,6,5,4,3,2,1 }; // = new int[SIZE];
+		int[] a = { 9,8,7,6,5,4,3,2,7 }; // = new int[SIZE];
 		printArray(a);
 		int[] b = copy(a);
 		printArray(b);
