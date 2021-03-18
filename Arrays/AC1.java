@@ -31,7 +31,49 @@ public class AC1
 		return clone;
 	}
 	
+	// decrenenting loop version
+	public static int[] reverse(int[] array)
+	{
+		int[] reverse = new int[array.length];
+		int c = 0;
+		for(int i = array.length-1; i >= 0; i--)
+		{
+			reverse[c] = array[i];
+			c++;
+		}
+		return reverse;
+	}
 	
+	// alternative version with incrementing loop
+	public static int[] reverse2(int[] array)
+	{
+		int[] reverse = new int[array.length];
+		int lastIndex = array.length - 1;
+		for(int i = 0; i <= lastIndex; i++)
+		{
+			reverse[i] = array[lastIndex-i];
+		}
+		return reverse;
+	}
+	
+	// 6.	Counts the number of odd numbers in the array
+	public static int countOdd(int[] array)
+	{
+		int odds = 0;
+		for(int element : array) //  traverse/iterate array
+		{
+			if(element % 2 != 0)
+				odds++;
+		}
+		return odds;
+	}
+	
+	public static int count(int[] array, int n) // #8
+	{
+		int counter = 0;
+		// your code here
+		return counter;
+	}
 	
 	public static void main (String[] args)
 	{
@@ -44,7 +86,8 @@ public class AC1
 		b[b.length-1] = 10;
 		printArray(a);
 		printArray(b);
-		printArray( extremes(a) );
+		printArray( "Extremes: " + extremes(a) );
+		printArray( "Reverse array: " + reverse( a ) );
 	}
 	
 }

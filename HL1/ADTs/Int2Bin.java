@@ -35,12 +35,23 @@ public class Int2Bin
 	{
 		Stack s = new Stack(); // create an empty stack
 		int n = number;
-		// your code goes here. Take ideas from int2binSL,
-		// just think about replacing what is done using
-		// a string with a stack
+		while(n > 0)
+		{	s.push(n % 2);
+			n = n / 2;
+		}
 		return s;
 	}
 	
+	public static void printStack(Stack s)
+	{
+		Node temp = s.top;
+		while(temp != null)
+		{
+			System.out.print(temp.data);
+			temp = temp.next;
+		}
+		System.out.println();
+	}
 	public static void main (String[] args)
 	{
 		int x = IBIO.inputInt("Enter a positive integer: ");
@@ -50,15 +61,8 @@ public class Int2Bin
 		int2binHL(x);
 		System.out.println( " in binary (HL algorithm)");
 		Stack binary = int2binStack(x);
-		// now output the stack so that we get the binary
-		// equivalent of the integer input
-		/* HL challenge:
-		 * write a method, called int2binS, that uses a stack
-		 * in order to calculate the binary equivalent of an
-		 * integer. Test it in the main method as well.
-		 * The idea is to use a stack (instead of recursion),
-		 * to reverse the modulos of 2 and build the binary
-		 */
+		printStack(binary);
+
 	}
 }
 
