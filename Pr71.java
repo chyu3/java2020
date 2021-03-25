@@ -10,7 +10,8 @@ public class Pr71
 			xx = xx * 3.732;
 			int x = (int)(xx*100);
 			//IBIO.output(xx);
-			IBIO.output( (double)x/100);
+			System.out.println( (double)x/100);
+			System.out.printf( "\tprintf output: %,10.2f\n", xx);
 		}
 		
 	}

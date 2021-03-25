@@ -10,6 +10,15 @@ public class ArrayDemo
 		System.out.println();
 	}
 	
+	public static void printArray(String[] a)
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.println( i + " : " + a[i] );
+		}
+		System.out.println();
+	}	
+	
 	public static void printArrayReverse(int[] a)
 	{
 		for(int i = a.length-1; i >= 0; i--)
@@ -38,7 +47,9 @@ public class ArrayDemo
 		printArray( b );
 		printArray( c );
 		
-		ArrayDemo2.main(null);
+		String[] s = {"A","B","C"};
+		ArrayDemo2.main(s);
+		//System.out.println(ArrayDemo2.SIZE);
 	}
 }
 
