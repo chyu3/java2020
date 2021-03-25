@@ -4,28 +4,27 @@
  */
 
 
-public class StackDemo
+public class QueueDemo
 {
 	
 	public static void main (String[] args)
 	{
-		Stack stack = new Stack();
+		Queue numberQueue = new Queue();
 		int input;
 		do
 		{
 			input = IBIO.inputInt("Enter a number to push to the stack: ");
 			if(input > 0)
-			{	stack.push(input);
+			{	numberQueue.enQueue(input);
 			}
-			stack.printStack();
+			numberQueue.printQueue();
 		} while(input > 0);
 		
-		System.out.println("\nNow we pop the whole stack:");
-		while(stack.isEmpty() == false)
-		{	System.out.print( stack.pop() + " " );
-			//stack.printStack();
+		System.out.println("\nNow we dequeue the whole q:");
+		while(numberQueue.isEmpty() == false)
+		{	System.out.print( numberQueue.deQueue() + " " );
 		}
-		System.out.print( stack.pop() + " " ); // to cause error, stack empty
+		//System.out.print( numberQueue.deQueue() + " " ); // to cause error, q empty
 	}
 }
 

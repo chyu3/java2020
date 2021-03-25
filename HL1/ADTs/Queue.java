@@ -36,7 +36,7 @@ public class Queue
 	{	Node temp = head;
 		System.out.print("Head <- ");
 		while(temp != null)
-		{	System.out.print(temp.data);
+		{	System.out.print(temp.data + " ");
 			temp = temp.next;
 		}
 		System.out.println(" <- Tail");
