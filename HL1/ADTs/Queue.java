@@ -6,6 +6,7 @@ public class Queue
 {
 	Node head;
 	Node tail;
+	int  size;
 	
 	public boolean isEmpty()
 	{
@@ -24,12 +25,14 @@ public class Queue
 			tail.next = newNode;
 			tail = newNode;
 		}
+		size++;
 	}
 	
 	public int deQueue()
 	{	if( !isEmpty() )
 		{	int data = head.data;
 			head = head.next;
+			size--;
 			return data;
 		} else {
 			System.out.println("Error-Empty queue");
@@ -38,7 +41,12 @@ public class Queue
 	}
 	
 	public void printQueue()
-	{	Node temp = head;
+	{	
+		if(isEmpty())
+		{	System.out.println("Queue is empty");
+			return;
+		}
+		Node temp = head;
 		System.out.print("Head <- ");
 		while(temp != null)
 		{	System.out.print(temp.data + " ");
