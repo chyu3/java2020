@@ -1,5 +1,5 @@
 /*
- * StackDemo v1
+ * Queue Demo v1
  * 
  */
 
@@ -13,7 +13,7 @@ public class QueueDemo
 		int input;
 		do
 		{
-			input = IBIO.inputInt("Enter a number to push to the stack: ");
+			input = IBIO.inputInt("Enter a number to enqueue: ");
 			if(input > 0)
 			{	numberQueue.enQueue(input);
 			}
@@ -24,7 +24,7 @@ public class QueueDemo
 		while(numberQueue.isEmpty() == false)
 		{	System.out.print( numberQueue.deQueue() + " " );
 		}
-		//System.out.print( numberQueue.deQueue() + " " ); // to cause error, q empty
+		System.out.print( numberQueue.deQueue() + " " ); // to cause error, q empty
 	}
 }
 

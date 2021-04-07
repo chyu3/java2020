@@ -27,7 +27,7 @@ public class Queue
 	}
 	
 	public int deQueue()
-	{	if(!isEmpty())
+	{	if( !isEmpty() )
 		{	int data = head.data;
 			head = head.next;
 			return data;
