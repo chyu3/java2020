@@ -29,7 +29,7 @@ public class QueueDemo2
 		{	queueLength++;
 			temp = temp.next;
 		}
-		// or, q.size
+		// or, q.size if the Queue class has a size attribute
 		int[] newArray = new int[queueLength];
 		int i = 0;
 		while(q.isEmpty() == false)
