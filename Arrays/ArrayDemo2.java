@@ -2,11 +2,11 @@
 public class ArrayDemo2
 {
 	private final static int MAXSIZE = 10;
-	private static size = 0;
+	private static lastIndex = 0;
 	
 	public static boolean isFull()
 	{
-		return size == MAXSIZE;
+		return lastIndex == MAXSIZE;
 	/*	if (size == MAXSIZE)
 	 *		return true;
 	 *	else
@@ -23,6 +23,16 @@ public class ArrayDemo2
 			size++;
 		}
 	}
+	
+	public int search(int[] a, int data)
+	{
+		return -1;
+	}
+	
+	public static void remove(int[] a, int data)
+	{
+	
+	}	
 	
 	public static void main(String[] args)
 	{
