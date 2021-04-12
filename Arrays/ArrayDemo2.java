@@ -19,8 +19,8 @@ public class ArrayDemo2
 		if(isFull())
 			System.out.println("Error - array full");
 		else {
-			a[size] = data;
-			size++;
+			a[lastIndex] = data;
+			lastIndex++;
 		}
 	}
 	
