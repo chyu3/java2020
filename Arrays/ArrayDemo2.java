@@ -2,7 +2,7 @@
 public class ArrayDemo2
 {
 	private final static int MAXSIZE = 10;
-	private static lastIndex = 0;
+	private static int lastIndex = 0;
 	
 	public static boolean isFull()
 	{
@@ -50,7 +50,7 @@ public class ArrayDemo2
 	public static void main(String[] args)
 	{
 		int[] array = new int[MAXSIZE];
-		System.out.println("Thieves liket them.");
+		System.out.println("HELLO");
 		ArrayDemo.printArray(array);
 		ArrayDemo.printArray(args);
 	}
