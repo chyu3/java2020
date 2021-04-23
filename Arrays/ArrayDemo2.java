@@ -58,8 +58,17 @@ public class ArrayDemo2
 			lastIndex--;
 			printArray(a);
 		}
+	}
+	
+	public static void insert(int[] a, int data, int index)
+	{
+		// code to insert data into a at index "index"
+	}
+	
+	public static void bubble(int[] a)
+	{
 		
-	}	
+	}
 	
 	public static void main(String[] args)
 	{
@@ -83,6 +92,8 @@ public class ArrayDemo2
 		remove(array,11);
 		System.out.println("remove(array, 12):");
 		remove(array,12);
+		sort(array);
+		printArray(array);
 	}
 }
 
