@@ -78,5 +78,11 @@ public class LinkedList
 		}
 	}
 	
+	public void insertInOrder(int data)
+	{	Node current;
+		Node newNode = new Node(data);
+		// your code goes here
+	}
+	
 }
 

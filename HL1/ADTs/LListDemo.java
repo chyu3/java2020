@@ -18,6 +18,15 @@ public class LListDemo
 		l.remove(1); l.printList();
 		l.remove(9); l.printList();
 		l.remove(0); l.printList();
+		
+		System.out.println("\n\nSorted Linked List!\n");
+		LinkedList sorted = new LinkedList();
+		for(int x : array)
+		{
+			sorted.insertInOrder(x);
+			sorted.printList();
+		}
+		
 	}
 }
 

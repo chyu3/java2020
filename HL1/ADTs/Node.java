@@ -24,12 +24,12 @@ public class Node
 		// OR // return next != null;
 	}
 
-/*
+
 	public String toString()
 	{
 		return "" + data;
 	}
-*/
+
 
 }
 
