@@ -79,9 +79,22 @@ public class LinkedList
 	}
 	
 	public void insertInOrder(int data)
-	{	Node current;
+	{	
 		Node newNode = new Node(data);
-		// your code goes here
+		if( isEmpty() || data < start.data )
+		{	newNode.next = start;
+			start = newNode;
+		} else {
+			Node previous = start;
+			Node current  = start.next;
+			while(current != null && 
+					current.data < newNode.data)
+			{	previous = previous.next;
+				current  = current.next;
+			}
+			newNode.next = current;
+			previous.next = newNode;
+		}
 	}
 	
 }
