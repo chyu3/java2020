@@ -6,13 +6,16 @@
 
 public class Q4TestAnswer
 {
+	/* Note: lastIndex may be replaced by array.length, but in such case
+	 * ===== you have to make sure you are not processing an array element that is NULL
+	 */
 	static int lastIndex = 0;
 	
 	public static void printArray(String[] a)
-	{	//					
+	{	//				   lastIndex		
 		for(int i = 0; i < a.length; i++)
 		{
-			//if(a[i] != null)
+			if(a[i] != null)
 			{	System.out.print( a[i] + "  ");
 			}
 		}
@@ -42,7 +45,7 @@ public class Q4TestAnswer
 			{	// start from first element until the last unsorted one
 				if( a[j].compareTo(a[j+1]) < 0) // if adjacent elements are
 				{	String temp = a[j];// not in order,
-					a[j] = a[j+1];  // swap them
+					a[j] = a[j+1];  // swap them; use < for descending; > for ascending
 					a[j+1] = temp;  // signal that we made a swap
 					swapped = true; // so we do another pass
 				} // if no swap is made in a pass, we are done sorting!
@@ -130,16 +133,35 @@ public class Q4TestAnswer
 	
 	public static int isSorted(String[] a)
 	{
-		if(isSortedAsc(a) )
+		if( isSortedAsc(a) )
 		{	return 1;
 		}
-		if(isSortedDesc(a) )
+		if( isSortedDesc(a) )
 		{	return -1;
 		}
 		return 0;
 	}
 	
 	public static void removeDuplicates(String[] a)
+	{
+		if( isSorted(a) != 1 )
+		{	System.out.println("Error-Array not sorted in ascending order");
+			return;
+		}
+		for(int i = 0; i < lastIndex; i++)
+		{
+			for(int j = 0; j < lastIndex; j++)
+			{
+				if(i != j && a[i].equals(a[j]))
+				{	System.out.println("Removed: " + a[j]);
+					remove(a, j);
+				}
+			}
+		}
+	}
+	
+	/* simple and efficient (single loop), but only good to remove 2 (duplicates)
+	public static void remove2Duplicates(String[] a)
 	{
 		if( isSorted(a) != 1 )
 		{	System.out.println("Error-Array not sorted in ascending order");
@@ -152,6 +174,7 @@ public class Q4TestAnswer
 			}
 		}
 	}
+	*/
 	
 	public static void insert(String[] a, String data, int index)
 	{	lastIndex++;
@@ -168,11 +191,11 @@ public class Q4TestAnswer
 			return;
 		}
 		if(isSorted(a) != 1)
-		{	System.out.println("Array not sorted in ascending order.");
+		{	System.out.println("Array NOT sorted in ascending order.");
 			return;
 		}
 		if( search(a, element) != -1 )
-		{	System.out.println(element + " already in the array");
+		{	System.out.println(element + " is already in the array");
 			return;
 		}
 		if(element.compareToIgnoreCase(a[0]) < 0)
@@ -188,14 +211,13 @@ public class Q4TestAnswer
 		while( i < lastIndex-1 && a[i].compareToIgnoreCase(element) < 0 )
 		{	i++;
 		}
-		
 		insert(a, element, i);
 		
 	}
 	
 	public static void main (String[] args)
 	{
-		String[] original = { "Abe", "Bob", "Gale", "Ed", "Faye", "Ives", "Chuck", "Abe", "Gale", "Anne" };
+		String[] original = { "Abe", "Bob", "Gale", "Ed", "Faye", "Ives", "Chuck", "Abe", "Gale", "Anne", "Gale" };
 		String[] ascending  = clone(original);
 		String[] descending = clone(original);
 		selectionSort(ascending);
