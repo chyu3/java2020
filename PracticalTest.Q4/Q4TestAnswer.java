@@ -217,7 +217,7 @@ public class Q4TestAnswer
 	
 	public static void main (String[] args)
 	{
-		String[] original = { "Abe", "Bob", "Gale", "Ed", "Faye", "Ives", "Chuck", "Abe", "Gale", "Anne", "Gale" };
+		String[] original = { "Abe", "Bob", "Gale", "Ed", "Faye", "Ives", "Chuck", "Abe", "Gale", "Anne", "Gale" }; // added a 3rd Gale to test duplicate removal algos
 		String[] ascending  = clone(original);
 		String[] descending = clone(original);
 		selectionSort(ascending);
