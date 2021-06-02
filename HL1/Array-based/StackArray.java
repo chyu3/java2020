@@ -2,7 +2,7 @@
  * DUE DATE FOR THIS HOMEWORK IS FRIDAY 13 AUGUST 2021
  * =================================================
  * Implement the ADTs we have learned (queue, singly linked list) using arrays.
- * An example for STACK is attached to this online homework for your reference.
+ * An example for STACK is attached to this online homework for your reference.
  * You do not need to write code in order to create multiple ADTs,
  * like we did for the linked-based structures we wrote in class.
  * The point of this homework is to practice arrays and ADTs.
