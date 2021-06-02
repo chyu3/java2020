@@ -159,9 +159,9 @@ public class Q4TestAnswer
 			}
 		}
 	}
-	
-	/* simple and efficient (single loop), but only good to remove 2 (duplicates)
-	public static void remove2Duplicates(String[] a)
+	/*
+	//simple and efficient (single loop), but only good to remove 2 (duplicates)
+	public static void removeDuplicates(String[] a)
 	{
 		if( isSorted(a) != 1 )
 		{	System.out.println("Error-Array not sorted in ascending order");
