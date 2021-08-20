@@ -1,5 +1,5 @@
 # java2020
-Java grade 11 2020~2021 & grade 12 2021~2022
+Java grade 11 2020~2021 and grade 12 2021~2022
 All the code written during our coding sessions is made available here
 good luck
 
