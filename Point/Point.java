@@ -8,12 +8,16 @@ public class Point
 	private double y;
 	
 	// behaviours or actions
+	public Point() // empty constructor
+	{	}
+	
 	public Point(char name, double x, double y) //constructor
 	{	// instantiates and initialises the object - called by the NEW keyword
 		this.name = name;
 		this.x = x;
 		this.y = y;
 	}
+	// two methods of same name = overloading
 	
 	// acessor method - getter
 	public char getName()
@@ -27,12 +31,36 @@ public class Point
 		this.name = name;
 	}
 	
-	public void print()
+	public void setX(double x)
+	{
+		this.x = x;
+	}
+	
+	public void setY(double y)
+	{
+		this.y = y;
+	}
+	
+	public double getX()
+	{
+		return this.x;
+	}
+	
+	public double getY()
+	{
+		return this.y;
+	}
+	
+/*	public void print()
 	{
 		System.out.print(name+"("+x+","+y+")");
 	}
-	
-	
+*/	
+	// overloading (polymorphism) - instead of print^
+	public String toString()
+	{
+		return this.name+"("+this.x+","+this.y+")";
+	}
 	
 	
 }
