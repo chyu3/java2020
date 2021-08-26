@@ -62,6 +62,13 @@ public class Point
 		return this.name+"("+this.x+","+this.y+")";
 	}
 	
+	// overloading (polymorphism) - compare 2 objects for equality
+	public boolean equals(Point p2)
+	{
+		return this.x == p2.getX() && this.y == p2.getY;
+	}
+	
+	// how would you calculate the distance between 2 points?
 	
 }
 
