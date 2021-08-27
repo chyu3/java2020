@@ -3,7 +3,7 @@ public class Point
 {	// Attributes + Beaviours = encapsulation
 	// private fields = data hiding
 	// Attributes or fields
-	private char name;
+	private String name;
 	private double x;
 	private double y;
 	
@@ -11,25 +11,38 @@ public class Point
 	public Point() // empty constructor
 	{	}
 	
-	public Point(char name, double x, double y) //constructor
+	public Point(String name, double x, double y) //constructor
 	{	// instantiates and initialises the object - called by the NEW keyword
 		this.name = name;
 		this.x = x;
 		this.y = y;
 	}
-	// two methods of same name = overloading
+	
+	public Point(char name, double x, double y) //constructor
+	{
+		this.name = name + "";
+		this.x = x;
+		this.y = y;
+	}
+	// two or more methods of same name = overloading
 	
 	// acessor method - getter
-	public char getName()
+	public String getName()
 	{
 		return this.name;
 	}
 	
 	// mutator method - setter	
-	public void setName(char name)
+	public void setName(String name)
 	{
 		this.name = name;
 	}
+	
+	// method overloading
+	public void setName(char name)
+	{
+		this.name = name + "";
+	}	
 	
 	public void setX(double x)
 	{
@@ -65,10 +78,17 @@ public class Point
 	// overloading (polymorphism) - compare 2 objects for equality
 	public boolean equals(Point p2)
 	{
-		return this.x == p2.getX() && this.y == p2.getY;
+		return this.x == p2.getX() && this.y == p2.getY();
 	}
 	
 	// how would you calculate the distance between 2 points?
+	public double distance(Point p2)
+	{
+		double distX = p2.getX() - this.getX();
+		double distY = p2.getY() - this.getY();
+		double dist = Math.sqrt( distX*distX + distY*distY );
+		return dist;
+	}
 	
 }
 

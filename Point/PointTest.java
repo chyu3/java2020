@@ -4,7 +4,7 @@ public class PointTest
 	
 	public static void main (String[] args)
 	{//	declaration|instantiation
-		Point a	=   new Point('A', 1.5, 0); // instantiating an object of the Point class
+		Point a	=   new Point('A', 2, 3); // instantiating an object of the Point class
 	/*	a.name = 'A';	// here we initialise the attributes/fields of...
 		a.x = 1.5;		// the object _a_
 		a.y = 0;
@@ -26,6 +26,11 @@ public class PointTest
 		c.setName('C');
 //		c.print();
 		System.out.println("\n"+c);
+		Point d = b;
+		System.out.println(a.equals(b));
+		System.out.println(b.equals(c));
+		System.out.println(b.equals(d));
+		
 		
 	}
 }
