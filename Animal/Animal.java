@@ -1,62 +1,53 @@
 public class Animal
 {
+    private String name;
     private char gender;
-    private String species;
     private int yob;
 
-    public Animal(String species, char gender, int yob)
-    {
-        this.gender = gender;
-        this.species = species;
+    public Animal(String name, char gender, int yob)
+    {   this.gender = Character.toUpperCase(gender);
+        this.name = name;
         this.yob = yob;
     }
 
     public char setGender()
-    {
-        return gender;
+    {   return gender;
     }
 
     public void setGender(char gender)
-    {
-        this.gender = Character.toUpperCase(gender);
+    {   this.gender = Character.toUpperCase(gender);
     }
 
-    public String getSpecies()
-    {
-        return species;
+    public String getName()
+    {   return name;
     }
 
-    public void setSpecies(String species)
-    {
-        this.species = species;
+    public void setName(String name)
+    {   this.name = name;
     }
 
     public int getYob()
-    {
-        return yob;
+    {   return yob;
     }
 
     public void setYob(int yob)
-    {
-        this.yob = yob;
+    {   this.yob = yob;
     }
 
     public void eat()
-    {
-        System.out.println("Munch munch");
+    {   System.out.println("Animals eat.");
     }
 
     public void talk()
-    {
-        System.out.println("Animals can't talk!");
+    {   System.out.println("Animals can't talk!");
     }
 
     @Override
     public String toString()
     {
-        return "Animal: " + species +
-                "\tgender=" + gender +
-                "\t yob=" + yob;
+        return "Animal: " + name +
+                "\tgender: " + gender +
+                "\tyob: " + yob;
     }
 
 }
