@@ -1,10 +1,10 @@
 public class BinaryNode
 {
-    private Object data;// can be replaced by any class or wrapper class
+    private int data;// can be replaced by any class or wrapper class
     private BinaryNode left;
     private BinaryNode right;
 
-    public BinaryNode(Object data)
+    public BinaryNode(int data)
     {   this.data = data;
         /* just overstating the obvious -- objects are null by default
         this.left = null;
@@ -12,11 +12,11 @@ public class BinaryNode
         */
     }
 
-    public Object getData()
+    public int getData()
     {   return data;
     }
 
-    public void setData(Object data)
+    public void setData(int data)
     {   this.data = data;
     }
 
@@ -38,14 +38,15 @@ public class BinaryNode
 
     @Override
     public String toString()
-    {   return "BinaryNode.data=" + data;
+    {   return String.format("(%d)", data);
     }
 
-
+    /*
     public static void main(String[] args)
     {
-        Integer i = new Integer(5);
-        BinaryNode n = new BinaryNode(i);
+        BinaryNode n = new BinaryNode(5);
         System.out.println(n);
     }
+    */
+
 }
