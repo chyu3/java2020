@@ -90,5 +90,7 @@ public class Point
 		return dist;
 	}
 	
+	//compareTo! origindist
+	
 }
 
