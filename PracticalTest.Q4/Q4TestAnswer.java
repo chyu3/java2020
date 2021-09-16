@@ -74,7 +74,7 @@ public class Q4TestAnswer
 	
 	
 	public static int search(String[] a, String data)
-	{
+	{	int c = 0;
 		for(int i = 0; i < a.length; i++)
 		{
 			if( a[i] != null)
@@ -82,8 +82,10 @@ public class Q4TestAnswer
 				if( a[i].equals(data) )
 				{	return i;
 				}
+				c++;
 			}
 		}
+		System.out.println(c);
 		return -1;
 	}
 	
