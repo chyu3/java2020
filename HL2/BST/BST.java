@@ -84,10 +84,23 @@ public class BST
             descOrder(node.getLeft());
     }
 
-    public boolean search(BinaryNode node)
+    public boolean search(BinaryNode node, int data)
     {
-
-
+        if( node == null ) // end of tree; not found
+        {
+            return false;
+        }
+        if( node.getData() == data )
+        {
+            return true;
+        }
+        else if( data < node.getData() )
+        {
+            return search( node.getLeft(), data );
+        } else //if(data > node.getData() )
+        {
+            return search(node.getRight(), data);
+        }
     }
 
     public static void main(String[] args)
@@ -105,6 +118,9 @@ public class BST
         b.postOrder(b.root);
         System.out.println("\ndescending Order traversal: ");
         b.descOrder(b.root);
+        System.out.println("\nFound 9? " + b.search(b.root, 9) );
+        System.out.println("\nFound 99? " + b.search(b.root, 99) );
+        System.out.println("\nFound 2? " + b.search(b.root, 2) );
     }
 
 }
