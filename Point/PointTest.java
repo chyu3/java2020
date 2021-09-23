@@ -18,21 +18,25 @@ public class PointTest
 		b.x = 2;
 		b.y = 3;
 		b.print();
-	*/	System.out.println(b.getName());
-		System.out.println(b.getX());
-		System.out.println(b.getY());
+	*/	System.out.print("Point name: " + b.getName());
+		System.out.print(" getX() = " + b.getX());
+		System.out.println(" getY() = " + b.getY());
 		// How would you create an array of Points? :)
 		Point c = new Point();
-		c.setName('C');
+		c.setName('C'); c.setX(-3); c.setY(-1);
 //		c.print();
 		System.out.println("\n"+c);
-		Point d = b;
+		Point d = new Point('D', 10, 7);
+		System.out.println(d);
 		// compare the following output before and after
 		// 
-		System.out.println(a.equals(b));
-		System.out.println(b.equals(c));
-		System.out.println(b.equals(d));
-		
+		System.out.println(a.getName() + " == " + b.getName() + "? " + a.equals(b));
+		System.out.println(b.getName() + " == " + c.getName() + "? " + b.equals(c));
+		System.out.println(b.getName() + " == " + d.getName() + "? " + b.equals(d));
+		System.out.println( "Distance between " + a.getName() + " and " + c.getName() + "? " + a.distance(c) );
+		System.out.println( "Distance between " + c.getName() + " and " + d.getName() + "? " + c.distance(d) );
+		System.out.println("a.compareTo(b) = " + a.compareTo(b));
+		System.out.println("b.compareTo(d) = " + b.compareTo(d));
 		
 	}
 }

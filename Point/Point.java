@@ -90,7 +90,12 @@ public class Point
 		return dist;
 	}
 	
-	//compareTo! origindist
-	
+	public double compareTo(Point p2)
+	{
+		Point origin = new Point("Origin", 0, 0);
+		double p1dist = Math.abs( origin.distance(this) );
+		double p2dist = Math.abs( origin.distance(p2) );
+		return p1dist - p2dist;
+	}
 }
 
