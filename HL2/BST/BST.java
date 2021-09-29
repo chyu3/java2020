@@ -2,6 +2,11 @@ public class BST
 {
     private BinaryNode root;
 
+    public BinaryNode getRoot()
+    {
+        return this.root;
+    }
+
     //public BST(BinaryNode root) { this.root = root; }
 
     public BST(int root)
@@ -44,18 +49,21 @@ public class BST
         add(this.root, n);
     }
 
-    private void inOrder(BinaryNode node)
+    public void inOrder(BinaryNode node)
     {
         if (node.getLeft() != null)
             inOrder(node.getLeft());
+
         System.out.print(node + " ");
+
         if (node.getRight() != null)
             inOrder(node.getRight());
     }
 
-    private void preOrder(BinaryNode node)
+    public void preOrder(BinaryNode node)
     {
         System.out.print(node + " ");
+
         if (node.getLeft() != null)
             preOrder(node.getLeft());
 
@@ -63,7 +71,7 @@ public class BST
             preOrder(node.getRight());
     }
 
-    private void postOrder(BinaryNode node)
+    public void postOrder(BinaryNode node)
     {
         if (node.getLeft() != null)
             postOrder(node.getLeft());
@@ -75,69 +83,33 @@ public class BST
     }
 
 
-    private void descOrder(BinaryNode node)
+    public void descOrder(BinaryNode node)
     {
         if (node.getRight() != null)
             descOrder(node.getRight());
+
         System.out.print(node + " ");
+
         if (node.getLeft() != null)
             descOrder(node.getLeft());
     }
 
     public boolean search(BinaryNode node, int data)
     {
-        if( node == null ) // end of tree; not found
+        if (node == null) // end of tree reached; not found
         {
             return false;
         }
-        if( node.getData() == data )
+        if (node.getData() == data) // found it!
         {
             return true;
-        }
-        else if( data < node.getData() )
+        } else if (data < node.getData()) // search (left) for lower values
         {
-            return search( node.getLeft(), data );
-        } else //if(data > node.getData() )
+            return search(node.getLeft(), data);
+        } else //if(data > node.getData() ) // search right for higher values
         {
             return search(node.getRight(), data);
         }
     }
 
-    public static void main(String[] args)
-    {
-        BST b = new BST(5);
-        b.add(12);
-        b.add(3);
-        b.add(9);
-        b.add(2);
-        System.out.println("preOrder traversal: ");
-        b.preOrder(b.root);
-        System.out.println("\nInOrder traversal: ");
-        b.inOrder(b.root);
-        System.out.println("\npostOrder traversal: ");
-        b.postOrder(b.root);
-        System.out.println("\ndescending Order traversal: ");
-        b.descOrder(b.root);
-        System.out.println("\nFound 9? " + b.search(b.root, 9) );
-        System.out.println("\nFound 99? " + b.search(b.root, 99) );
-        System.out.println("\nFound 2? " + b.search(b.root, 2) );
-    }
-
 }
-
-/*
-    BST created with 5 as its root.
-        (12) added to the right of (5)
-        (3) added to the left of (5)
-        (9) added to the left of (12)
-        (2) added to the left of (3)
-        preOrder traversal:
-        (5) (3) (2) (12) (9)
-        InOrder traversal:
-        (2) (3) (5) (9) (12)
-        postOrder traversal:
-        (2) (3) (9) (12) (5)
-        descending Order traversal:
-        (12) (9) (5) (3) (2)
-
-*/
