@@ -42,3 +42,22 @@ public class FractionTest
         System.out.println(i + " compareTo " + h + " ?: " + i.compareTo(h));
     }
 }
+
+/* OUTPUT *
+
+	1/2
+	0.5
+	0/1
+	12/36
+	1/3
+	Enter fraction (a/b format): 5/8
+	5/8
+	1/3 + 5/8 = 23/24
+	1/3, 1/4 : 
+	1/3 == 1/4 ?: false
+	1/3 == 1/3 ?: true
+	1/3 compareTo 1/3 ?: 0.0
+	1/3 compareTo 1/4 ?: 0.08333333333333331
+	1/4 compareTo 5/8 ?: -0.375
+
+*/
