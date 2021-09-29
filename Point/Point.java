@@ -9,7 +9,17 @@ public class Point
 	
 	// behaviours or actions
 	public Point() // empty constructor
-	{	}
+	{	this.name = "P";
+		this.x = 0;
+		this.y = 0;
+	}
+	
+	public Point(double x, double y) //constructor
+	{	// instantiates and initialises the object - called by the NEW keyword
+		this.name = "P";
+		this.x = x;
+		this.y = y;
+	}
 	
 	public Point(String name, double x, double y) //constructor
 	{	// instantiates and initialises the object - called by the NEW keyword
