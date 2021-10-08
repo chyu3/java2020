@@ -31,6 +31,15 @@ public class SimpleRecursionDemos
 		System.out.print(n + " ");
 	}
 
+	public static String countS(int n)
+	{
+		if(n < 1)
+		{
+			return "";
+		} else {
+			return " " + countS(n-1);
+		}
+	}
 	
 	public static void main (String[] args)
 	{
@@ -40,6 +49,8 @@ public class SimpleRecursionDemos
 
 		System.out.println("\nCounting...");
 		count(10);
+		System.out.println(countS(10));
+		
 		
 		System.out.println("\nPor queeeeeeeee");
 		System.out.println("Because RECURSION, pues!");
