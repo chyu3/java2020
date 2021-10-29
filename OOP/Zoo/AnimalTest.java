@@ -17,6 +17,7 @@ public class AnimalTest
         snoop.talk();
         snoop.chase();
 
+        IBIO.output("HI");
     }
 
 }
