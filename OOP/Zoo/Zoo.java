@@ -69,9 +69,10 @@ public class Zoo
     public String toString()
     {
         String list = "";
-        for(Animal a : animals)
+        //for(Animal a : animals)
+        for(int i = 0; i < animals.size(); i++)
         {
-            list = list + "\t" + a.toString() + "\n";
+            list = list + i + "\t" + animals.get(i).toString() + "\n";
         }
         return zooName + " Zoo: \n" + list;
     }
