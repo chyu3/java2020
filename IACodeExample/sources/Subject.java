@@ -3,9 +3,10 @@
  * @author Marcos
  */
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Subject
+public class Subject implements Serializable
 {
 
     private String subjectName; // key field

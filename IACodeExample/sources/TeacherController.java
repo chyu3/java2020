@@ -177,13 +177,14 @@ public class TeacherController
     public static void save() throws IOException
     {
         System.out.println("<<< Saving data >>>");
-        File teacherFile = new File("teacher.txt");
+        File teacherFile = new File("teacher.csv");
         FileWriter fw = new FileWriter(teacherFile);
         PrintWriter out = new PrintWriter(fw);	// write mode
-        for (Teacher t : teachers)  //loop to save each element ->
+        out.println("TeacherID,TeacherName,WorkloadHours");
+        for (Teacher t : teachers)      //loop to save each element ->
         {
-            out.println(t.getId());//of the list to the file
-            out.println(t.getName());
+            out.print(t.getId() + ","); //of the list to the file, separated by ,
+            out.print(t.getName() + ",");
             out.println(t.getHours());
         }
         out.close();
@@ -193,8 +194,8 @@ public class TeacherController
     public static void load() throws IOException
     {
         System.out.println("<<< Loading data >>>");
-        File teacherFile = new File("teacher.txt");
-        if (!teacherFile.exists())
+        File teacherFile = new File("teacher.csv");
+        if (!teacherFile.exists())      // no data file? create one and have user input data
         {
             teacherFile.createNewFile();
             System.out.println("Data file not found. Creating one.");
@@ -210,10 +211,10 @@ public class TeacherController
         while (in.ready())// read lines while file has content
         {
             temp = in.readLine();
-            newID = Integer.parseInt(temp);
-            newName = in.readLine();
-            temp = in.readLine();
-            newHours = Integer.parseInt(temp);
+            String[] record = temp.split(",");
+            newID = Integer.parseInt(record[0]);
+            newName = record[1];
+            newHours = Integer.parseInt(record[2]);
             Teacher newTeacher = new Teacher(newID, newName, newHours);
             teachers.add(newTeacher);
         }

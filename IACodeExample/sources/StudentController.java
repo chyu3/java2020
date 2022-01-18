@@ -197,14 +197,15 @@ public class StudentController
     public static void save() throws IOException
     {
         System.out.println("<<< Saving data >>>");
-        File studentFile = new File("student.txt");
+        File studentFile = new File("student.csv");
         FileWriter fw = new FileWriter(studentFile);
         PrintWriter out = new PrintWriter(fw);	// write mode
-        for (Student s : students)  //loop to save each element ->
+        out.println("StudentID,StudentName,StudentGrade,DP/OFS");
+        for (Student s : students)      //loop to save each element ->
         {
-            out.println(s.getId());//of the list to the file
-            out.println(s.getName());
-            out.println(s.getGrade());
+            out.print(s.getId() + ","); //of the list to the file, separated by ,
+            out.print(s.getName() + ",");
+            out.print(s.getGrade() + ",");
             out.println(s.getIBDP());
         }
         out.close();
@@ -214,8 +215,8 @@ public class StudentController
     public static void load() throws IOException
     {
         System.out.println("<<< Loading data >>>");
-        File studentFile = new File("student.txt");
-        if (!studentFile.exists())
+        File studentFile = new File("student.csv");
+        if (!studentFile.exists())      // no data file? create one and have user input data
         {
             studentFile.createNewFile();
             System.out.println("Data file not found. Creating one.");
@@ -229,15 +230,15 @@ public class StudentController
         char newIbdp = ' ';
         String temp;
         students.clear();
+        in.readLine(); // read the header (field/attribute names for CSV)-we discard them as we don't need them here
         while (in.ready())// read lines while file has content
         {
             temp = in.readLine();
-            newID = Integer.parseInt(temp);
-            newName = in.readLine();
-            temp = in.readLine();
-            newGrade = Integer.parseInt(temp);
-            temp = in.readLine();
-            newIbdp = temp.charAt(0);
+            String[] record = temp.split(",");
+            newID = Integer.parseInt(record[0]);
+            newName = record[1];
+            newGrade = Integer.parseInt(record[2]);
+            newIbdp = record[3].charAt(0);
             Student newStudent = new Student(newID, newName, newGrade, newIbdp);
             students.add(newStudent);
         }

@@ -1,10 +1,9 @@
-
 /**
  * SubjectController class; requires the Person, Student, Teacher,
  * and Subject classes + StudentController + TeacherController
  *
  * @author Marcos
- */
+ **/
 import java.util.*;
 import java.io.*;
 
@@ -125,93 +124,38 @@ public class SubjectController
         }
     }
 
+
     public static void save() throws IOException
     {
-        File subjectsFile = new File("subjects.txt");
-        FileWriter fw = new FileWriter(subjectsFile);
-        PrintWriter save = new PrintWriter(fw);	// write mode
-        for (Subject s : subjects)  //loop to save each element ->
-        {
-            save.println(s.getSubjectName());//of the list to the file
-            save.println(s.getSubjectLevel());
-            save.println(s.getClassroom());
-            save.println(s.lecturer.getId());
-            save.println(s.lecturer.getName());
-            save.println(s.lecturer.getHours());
-            save.println(s.students.size()); // so we know how many to load later
-            // always save students at the end!
-            for (Student st : s.students)
-            {
-                save.println(st.getId());
-                save.println(st.getName());
-                save.println(st.getGrade());
-                save.println(st.getIBDP());
-                // recommendation for Student class:
-                // getIBDP() should return String: "Yes" if true, "No" if false
-            }
-
-        }
-        save.close();
+        FileOutputStream subjectsFOS = new FileOutputStream("subjects.ser");
+        ObjectOutputStream subjectOOS = new ObjectOutputStream(subjectsFOS);
+        subjectOOS.writeObject(subjects);
+        subjectOOS.close();
+        subjectsFOS.close();
         System.out.println("\t\t\t\t\tSubjects file saved."); // optional
     }
 
     public static void load() throws IOException
     {
-        File subjectsFile = new File("subjects.txt");
+        File subjectsFile = new File("subjects.ser");
         if (!subjectsFile.exists())
         {
             subjectsFile.createNewFile();
             System.out.println("Subjects file not found. Creating it.");
             addSubject();
         }
-        FileReader fr = new FileReader(subjectsFile);
-        BufferedReader load = new BufferedReader(fr); //read mode
-        int teacherID = 0;
-        int studentID = 0;
-        int grade = 0;
-        int hours = 0;
-        int classSize = 0;
-        String subjectName = "";
-        char subjectLevel = ' ';
-        String classroom = "";
-        String teacherName = "";
-        String studentName = "";
-        String ibdp = "";
-        boolean ibdpBoolean = true;
-        String temp;
-        subjects.clear();
-        while (load.ready())// read lines while file has content
-        {   // load subject data first
-            subjectName = load.readLine();
-            subjectLevel = load.readLine().charAt(0);
-            classroom = load.readLine();
-            temp = load.readLine();
-            teacherID = Integer.parseInt(temp);
-            teacherName = load.readLine();
-            temp = load.readLine();
-            hours = Integer.parseInt(temp);
-            temp = load.readLine();
-            Teacher teacher = new Teacher(teacherID, teacherName, hours);
-            // load number of students
-            classSize = Integer.parseInt(temp);
-            ArrayList<Student> students = new ArrayList<Student>(classSize);
-            // read data for each student, add to arraylist
-            for (int i = 0; i < classSize; i++)
-            {
-                temp = load.readLine();
-                studentID = Integer.parseInt(temp);
-                studentName = load.readLine();
-                temp = load.readLine();
-                grade = Integer.parseInt(temp);
-                temp = load.readLine();
-                ibdpBoolean = (temp.equals("Yes"));
-                Student stu = new Student(studentID, studentName, grade, ibdpBoolean);
-                students.add(stu);
-            }
-            Subject subj = new Subject(subjectName, subjectLevel, classroom, teacher, students);
-            subjects.add(subj);
+        try {
+            FileInputStream subjectFIS = new FileInputStream("subjects.ser");
+            ObjectInputStream subjectOIS = new ObjectInputStream(subjectFIS); //read mode
+            subjects = (ArrayList<Subject>) subjectOIS.readObject();
+            subjectOIS.close();
+            subjectFIS.close();
+        } catch (ClassNotFoundException c)
+        {
+            System.out.println("Class not found");
+            c.printStackTrace();
+            return;
         }
-        load.close();
         System.out.println("\t\t\t\t\tSubjects file loaded."); // optional
     }
 
