@@ -208,6 +208,7 @@ public class TeacherController
         int newHours = 0;
         String temp;
         teachers.clear();
+        temp = in.readLine(); // read first line containing field names and discard it; only needed for CSV format
         while (in.ready())// read lines while file has content
         {
             temp = in.readLine();

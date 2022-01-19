@@ -2,7 +2,10 @@
  * Student (sub) class requires the Person (super) class
  * @author Marcos
  */
-public class Student extends Person
+
+import java.io.Serializable;
+
+public class Student extends Person implements Serializable
 {
     private int grade;
     private boolean ibdp;
