@@ -1,8 +1,10 @@
+import java.io.Serializable;
+
 /**
  *
  * @author Marcos
  */
-public class Person
+public class Person implements Serializable
 {
     private int id;
     private String name;
